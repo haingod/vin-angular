@@ -1,0 +1,9 @@
+.info {
+  padding-left: 50px;
+  p {
+    margin: 0;
+  }
+  p:first-child {
+    flex-basis: 200px;
+  }
+}

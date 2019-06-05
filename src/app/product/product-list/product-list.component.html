@@ -1,3 +1,41 @@
-<p>
-  product-list works!
-</p>
+<table class="table product-table">
+  <thead>
+  <tr>
+    <td>
+      <h5 style="padding: 5px">Product List</h5>
+    </td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Filter by:</td>
+    <td><input type="text" class="form-control" [(ngModel)]="filterValue" (ngModelChange)="changeFilter()"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th scope="col"><button (click)="toggleShowImage()" class="btn btn-primary">{{!isToggleShowImage ? "Show Image" : "Hide Image"}}</button></th>
+    <th scope="col">Product</th>
+    <th scope="col">Code</th>
+    <th scope="col">Available</th>
+    <th scope="col">Price</th>
+    <th scope="col">5 Star Rating</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let product of (filteredProductList || products)">
+    <td><img src="{{product.img}}" alt="" width="50" height="50" *ngIf="isToggleShowImage"></td>
+    <td><a routerLink="/product/{{product.id}}">{{product.name}}</a></td>
+    <td>{{product.code}}</td>
+    <td>{{product.available | date:'longDate'}}</td>
+    <td>{{product.price | currency:'USD'}}</td>
+    <td><app-rating [ratingValue]="product.rating"></app-rating></td>
+  </tr>
+  </tbody>
+</table>

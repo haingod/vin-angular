@@ -1,3 +1,39 @@
-<p>
-  product-detail works!
-</p>
+<div class="card" *ngIf="product">
+  <div class="card-header">
+    <p>Product Detail: {{product.name}}</p>
+  </div>
+  <div class="card-body row">
+    <div class="info col-sm">
+      <div class="row">
+        <p>Name:</p>
+        <p>{{product.name}}</p>
+      </div>
+      <div class="row">
+        <p>Code:</p>
+        <p>{{product.code}}</p>
+      </div>
+      <div class="row">
+        <p>Description:</p>
+        <p>{{product.description}}</p>
+      </div>
+      <div class="row">
+        <p>Availability:</p>
+        <p>{{product.available | date:'longDate'}}</p>
+      </div>
+      <div class="row">
+        <p>Price:</p>
+        <p>{{product.price | currency:'USD'}}</p>
+      </div>
+      <div class="row">
+        <p>5 Star Rating:</p>
+        <app-rating [ratingValue]="product.rating"></app-rating>
+      </div>
+    </div>
+    <div class="col-sm" >
+      <img src="{{product.img}}" alt="">
+    </div>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-secondary" (click)="goBack()"><i class="fas fa-arrow-left"></i> Go Back</button>
+  </div>
+</div>
