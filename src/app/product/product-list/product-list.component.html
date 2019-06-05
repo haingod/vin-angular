@@ -1,22 +1,14 @@
 <table class="table product-table">
   <thead>
   <tr>
-    <td>
+    <td colspan="6">
       <h5 style="padding: 5px">Product List</h5>
     </td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
   </tr>
   <tr>
     <td>Filter by:</td>
     <td><input type="text" class="form-control" [(ngModel)]="filterValue" (ngModelChange)="changeFilter()"></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td colspan="4"></td>
   </tr>
   <tr>
     <th scope="col"><button (click)="toggleShowImage()" class="btn btn-primary">{{!isToggleShowImage ? "Show Image" : "Hide Image"}}</button></th>
