@@ -11,6 +11,10 @@ export class ProductListComponent {
   filteredProductList: Product[];
   isToggleShowImage: boolean;
   filterValue: string;
+  toggleStatus = {
+    show: 'Show Image',
+    hide: 'Hide Image'
+  };
   constructor() {
     this.isToggleShowImage = true;
   }
