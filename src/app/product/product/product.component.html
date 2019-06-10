@@ -1,1 +1,1 @@
-<app-product-list [products]="products | async"></app-product-list>
+<app-product-list [products]="products | async" (filterEvent)="filterProduct($event)"></app-product-list>

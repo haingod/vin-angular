@@ -1,7 +1,7 @@
 import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 import { ProductComponent } from './product/product.component';
-import { ProductDetailComponent } from './product-detail/product-detail/product-detail.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import {ProductService} from './product.service';
 import {CommonModule} from '@angular/common';

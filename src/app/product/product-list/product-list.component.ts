@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Product} from '../../model/product';
 
 @Component({
@@ -8,7 +8,7 @@ import {Product} from '../../model/product';
 })
 export class ProductListComponent {
   @Input() products: Product[];
-  filteredProductList: Product[];
+  @Output() filterEvent = new EventEmitter();
   isToggleShowImage: boolean;
   filterValue: string;
   toggleStatus = {
@@ -23,8 +23,6 @@ export class ProductListComponent {
     this.isToggleShowImage = !this.isToggleShowImage;
   }
   changeFilter() {
-    this.filteredProductList = this.products.filter(
-      product => product.name.toLowerCase().indexOf(this.filterValue.toLowerCase()) > -1
-    );
+    this.filterEvent.emit(this.filterValue);
   }
 }

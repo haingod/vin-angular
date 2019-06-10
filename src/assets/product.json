@@ -7,7 +7,7 @@
     "price": 19.95,
     "rating": 3,
     "description": "description",
-    "img": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
+    "img": "https://images-na.ssl-images-amazon.com/images/I/41mcurLhVqL._SX466_.jpg"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "price": 32.99,
     "rating": 4,
     "description": "description",
-    "img": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
+    "img": "https://media.tractorsupply.com/is/image/TractorSupplyCompany/3599008?$456$"
   },
   {
     "id": 3,
@@ -26,7 +26,7 @@
     "available": "2019-06-21T03:57:41.946Z",
     "price": 9.90,
     "rating": 5,
-    "img": "https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"
+    "img": "https://media.4rgos.it/i/Argos/6161761_R_Z001A?w=750&h=440&qlt=70"
   },
   {
     "id": 4,
@@ -36,7 +36,7 @@
     "price": 11.55,
     "rating": 4,
     "description": "description",
-    "img": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"
+    "img": "https://www.tradetools.com/Images/ProductImages/Medium/RDCS2300.jpg"
   },
   {
     "id": 5,
@@ -46,6 +46,6 @@
     "price": 35.95,
     "rating": 4,
     "description": "description",
-    "img": "https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"
+    "img": "https://partycity6.scene7.com/is/image/PartyCity/_pdp_sq_?$_1000x1000_$&$product=PartyCity/788970"
   }
 ]

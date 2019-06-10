@@ -21,7 +21,7 @@
   </thead>
   <tbody>
 
-  <tr *ngFor="let product of (filteredProductList || products)">
+  <tr *ngFor="let product of products">
     <td><img src="{{product.img}}" alt="" width="50" height="50" *ngIf="isToggleShowImage"></td>
     <td><a routerLink="/product/{{product.id}}">{{product.name}}</a></td>
     <td>{{product.code}}</td>

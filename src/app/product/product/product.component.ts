@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import {ProductService} from '../product.service';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
+import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 import {Product} from '../../model/product';
 
 @Component({
@@ -8,12 +9,23 @@ import {Product} from '../../model/product';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent implements OnInit {
-
+export class ProductComponent implements AfterViewInit {
+  searchTerms: Subject<string> = new Subject();
   products: Observable<Product[]>;
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {
+    this.products = this.searchTerms.pipe(
+      debounceTime(200),
+      distinctUntilChanged(),
+      switchMap((term: string) => this.productService.queryProducts(term)),
+    );
+  }
 
-  ngOnInit() {
-    this.products = this.productService.getProducts();
+  filterProduct(searchText) {
+    this.searchTerms.next(searchText);
+  }
+
+  ngAfterViewInit() {
+    // initial get all
+    this.filterProduct('');
   }
 }
